@@ -96,7 +96,7 @@
          <div class="header-content">
              <!-- Add your profile picture here -->
              <img src="1028c9b6f80b65ddc4d687ef0ddf144d.jpg" alt="Your Profile Picture" class="profile-picture">
-             <h1>shaina k</h1>
+             <h1>vaitheeswaran m</h1>
              <p>A COMPUTER APPLICATION STUDENT</p>
          </div>
      </header>
@@ -115,11 +115,13 @@
      <section id="about">
          <div class="section-content">
              <h2>About Me</h2>
-             <p>I'm a <b>COMPUTER APPLICATION STUDENT</b> expert who is passionate about creating dynamic and user-friendly websites. 
-                 I'm driven by the desire to craft high-performance web applications that enhance user experience and provide
-                  seamless digital solutions. With over 2 years of experience in the field, I'm dedicated to staying up to date 
-                  with the latest trends and innovations in the 
-                  Computing landscape.Iam so into programming languages like python,java,c++.etc..
+             <p>I'm a <b>COMPUTER APPLICATION STUDENT</b> 
+            I am vaitheeswaran, an experienced programmer proficient in Python, C++, and Java.
+         I have a deep understanding of data structures and algorithms, including binary trees, 
+        AVL trees, B-trees, B+ trees, merge sort, selection sort, bubble sort, and linear search.
+        I have also completed certification courses in Artificial Intelligence and Machine Learning.
+        Outside of my technical expertise, I actively engage in extracurricular activities like cricket, 
+       and I am passionate about continuously enhancing my skills by learning new technologies and tools."
                 </p>
  
          </div>
