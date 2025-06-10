@@ -1,0 +1,162 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO1mQm3f0RNygODUd0Yig+a",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vaithe292006/Digital_portfolio/blob/main/Vaithe2904\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "VGBZOVjMDhNB"
+      },
+      "outputs": [],
+      "source": [
+        "Name,Age,Marks\n",
+        "Lavanya,21,90\n",
+        "Sowmiya,20,85\n",
+        "Tharun,18,80"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "# Read the csv file\n",
+        "data=pd.read_csv(\"/content/exams.csv\")\n",
+        "\n",
+        "# Show first 5 rows\n",
+        "print(data.head())\n",
+        "\n",
+        "# Describe the dataset (summary stats)\n",
+        "print(data.describe())\n",
+        "\n",
+        "# Create a new 'Marks' column as the average of all 3 scores\n",
+        "data[\"Marks\"]=data[[\"math score\",\"writing score\",\"reading score\"]].mean(axis=1)\n",
+        "\n",
+        "# Access the new 'Marks' column\n",
+        "print(\"Marks column:\")\n",
+        "print(data[\"Marks\"])\n",
+        "\n",
+        "# Filter data\n",
+        "print(\"Students with marks >75:\")\n",
+        "print(data[data[\"Marks\"]>75])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AWqP4rL5Do-Y",
+        "outputId": "d9f5f846-b2d9-4367-a0ee-064e0f2e4f03"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   gender race/ethnicity parental level of education         lunch  \\\n",
+            "0    male        group A                 high school      standard   \n",
+            "1  female        group D            some high school  free/reduced   \n",
+            "2    male        group E                some college  free/reduced   \n",
+            "3    male        group B                 high school      standard   \n",
+            "4    male        group E          associate's degree      standard   \n",
+            "\n",
+            "  test preparation course  math score  reading score  writing score  \n",
+            "0               completed          67             67             63  \n",
+            "1                    none          40             59             55  \n",
+            "2                    none          59             60             50  \n",
+            "3                    none          77             78             68  \n",
+            "4               completed          78             73             68  \n",
+            "        math score  reading score  writing score\n",
+            "count  1000.000000    1000.000000    1000.000000\n",
+            "mean     66.396000      69.002000      67.738000\n",
+            "std      15.402871      14.737272      15.600985\n",
+            "min      13.000000      27.000000      23.000000\n",
+            "25%      56.000000      60.000000      58.000000\n",
+            "50%      66.500000      70.000000      68.000000\n",
+            "75%      77.000000      79.000000      79.000000\n",
+            "max     100.000000     100.000000     100.000000\n",
+            "Marks column:\n",
+            "0      65.666667\n",
+            "1      51.333333\n",
+            "2      56.333333\n",
+            "3      74.333333\n",
+            "4      73.000000\n",
+            "         ...    \n",
+            "995    69.333333\n",
+            "996    89.333333\n",
+            "997    36.000000\n",
+            "998    76.333333\n",
+            "999    62.333333\n",
+            "Name: Marks, Length: 1000, dtype: float64\n",
+            "Students with marks >75:\n",
+            "     gender race/ethnicity parental level of education         lunch  \\\n",
+            "7      male        group E                some college      standard   \n",
+            "10     male        group E                some college      standard   \n",
+            "11   female        group D                 high school      standard   \n",
+            "12     male        group D          associate's degree      standard   \n",
+            "14     male        group E            some high school      standard   \n",
+            "..      ...            ...                         ...           ...   \n",
+            "988  female        group B                some college      standard   \n",
+            "991  female        group C          associate's degree      standard   \n",
+            "994    male        group E                 high school  free/reduced   \n",
+            "996    male        group D          associate's degree  free/reduced   \n",
+            "998  female        group C                some college      standard   \n",
+            "\n",
+            "    test preparation course  math score  reading score  writing score  \\\n",
+            "7                 completed          93             88             84   \n",
+            "10                completed          99             83             85   \n",
+            "11                completed          80             87             90   \n",
+            "12                completed          77             87             85   \n",
+            "14                completed          81             87             85   \n",
+            "..                      ...         ...            ...            ...   \n",
+            "988                    none          75             76             81   \n",
+            "991                    none          87             93             88   \n",
+            "994               completed          86             82             75   \n",
+            "996               completed          85             91             92   \n",
+            "998                    none          73             74             82   \n",
+            "\n",
+            "         Marks  \n",
+            "7    88.333333  \n",
+            "10   89.000000  \n",
+            "11   85.666667  \n",
+            "12   83.000000  \n",
+            "14   84.333333  \n",
+            "..         ...  \n",
+            "988  77.333333  \n",
+            "991  89.333333  \n",
+            "994  81.000000  \n",
+            "996  89.333333  \n",
+            "998  76.333333  \n",
+            "\n",
+            "[327 rows x 9 columns]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
